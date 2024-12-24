@@ -1,0 +1,49 @@
+.container {
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    direction: rtl;
+}
+
+#introduce {
+    display: block;
+    width: 100%;
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    padding-bottom: 5px;
+    background-color: #4CAF50;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+
+/* Page Style */
+
+.datepicker-day-view .table-days td:not(.disabled) span {
+    color: #4caf50 !important;
+    font-weight: bold;
+}
+
+.datepicker-day-view .table-days td.selected span,
+.datepicker-day-view .table-days td span:hover {
+    background-color: #4caf50 !important;
+    color: #fff !important;
+}
+
+.message{
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #ff9800;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+table tr td , table tr th{
+    border: 1px solid;
+    padding: 5px 15px;
+}
