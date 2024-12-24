@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> رزرو نوبت درمانگاه چمن سلطان </title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/persian-date/dist/persian-date.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/persian-datepicker/dist/js/persian-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker/dist/css/persian-datepicker.min.css">
+</head>
+<body >
+    
+    <header>
+        <h1>سیستم رزرو نوبت درمانگاه چمن سلطان </h1>
+    </header>
+   
+    <main>
+        
+        <section class="hero2" > 
+        <form id="appointmentForm">
+            <div class="form-group">
+                <label for="name" >نام و نام خانوادگی:</label>
+                <input type="text" id="name" size="35" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">شماره تماس:</label>
+                <input type="tel" id="phone" size="40" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="date">تاریخ رزرو:</label>
+                <input type="text" id="date" size="40" name="date" class="persian-datepicker" required>
+            </div>
+            <div class="form-group">
+                <label for="time">ساعت:</label>
+                <select id="time"  name="time"  required>
+                    <option value=""> انتخاب کنید</option>
+                    <option value="09:00">09:00 صبح</option>
+                    <option value="10:00">10:00 صبح</option>
+                    <option value="11:00">11:00 صبح</option>
+                    <option value="12:00">12:00 ظهر</option>
+                    <option value="14:00">14:00 بعدازظهر</option>
+                    <option value="15:00">15:00 بعدازظهر</option>
+                </select>
+            </div>
+            <button  type="submit"  class=" btn2"><b> ثبت نوبت</b></button>
+        </form>
+        <div id="confirmation" style="display: none;">
+            <p>نوبت شما با موفقیت ثبت شد!</p>
+         
+        </div>
+    </section>
+    </main>
+    
+    <footer>
+        <p> درمانگاه چمن سلطان سال 1403<p>
+        <p>  ایمیل: chamansoltan@gmail.com<p> 
+        <p>   تمامی حقوق محفوظ است  <p>  
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Initialize Persian date picker
+            const persianDateInput = document.querySelector('.persian-datepicker');
+            if (persianDateInput) {
+                $(persianDateInput).persianDatepicker({
+                    format: 'YYYY/MM/DD',
+                    calendar: {
+                        persian: {
+                            locale: 'fa',
+                            showHint: true,
+                        },
+                    },
+                });
+            }
+
+            const form = document.getElementById('appointmentForm');
+            const confirmation = document.getElementById('confirmation');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                confirmation.style.display = 'block';
+                form.reset();
+            });
+        });
+    </script>
+
+<script src="static/js/lib/jquery-3.2.1.min.js"></script>
+<script src="static/js/lib/persian-date.min.js"></script>
+<script src="static/js/lib/persian-datepicker.min.js"></script>
+<script src="static/js/app.js"></script>
+</body>
+</html>
